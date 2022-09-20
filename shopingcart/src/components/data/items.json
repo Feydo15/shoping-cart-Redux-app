@@ -1,0 +1,74 @@
+
+  [
+    {
+      "id": 1,
+      "name": "Paniki T-shirts",
+      "price": "250",
+      "imgUrl": "../Home-img/1644216635611.jpg",
+      "inStock": true,
+      "fastDelivery": true,
+      "ratings": "5",
+      "newProduct": false
+    },
+    {
+      "id": 2,
+      "name": "Women Shorts",
+      "price": "150",
+      "imgUrl": "../Home-img/1644216657587.jpg",
+      "inStock": true,
+      "fastDelivery": false,
+      "ratings": "0",
+      "newProduct": true
+    },
+    {
+      "id": 3,
+      "name": "Paniki Caps",
+      "price": "150",
+      "imgUrl": "../Home-img/1644216662775.jpg",
+      "inStock": true,
+      "fastDelivery": true,
+      "ratings": "5",
+      "newProduct": false
+    },
+    {
+      "id": 4,
+      "name": "Paniki women T-shirt",
+      "price": "270",
+      "imgUrl": "../Home-img/1644216666875.jpg",
+      "inStock": true,
+      "fastDelivery": true,
+      "ratings": "2",
+      "newProduct": true
+    },
+    {
+      "id": 5,
+      "name": "Man Shorts",
+      "price": "200",
+      "imgUrl": "../Home-img/1644216687336.jpg",
+      "inStock": true,
+      "fastDelivery": false,
+      "ratings": "5",
+      "newProduct": true
+    },
+    {
+      "id": 6,
+      "name": "Boy Bye Caps",
+      "price": "150",
+      "imgUrl": "../Home-img/1644216733821.jpg",
+      "inStock": false,
+      "fastDelivery": true,
+      "ratings": "5",
+      "newProduct": false
+    },
+    {
+      "id": 7,
+      "name": "Boy Bye T-shirts",
+      "price": "250",
+      "imgUrl": "../Home-img/1644216635611.jpg",
+      "inStock": true,
+      "fastDelivery": true,
+      "ratings": "1",
+      "newProduct": false
+    }
+  ]
+  
