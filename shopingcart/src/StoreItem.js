@@ -1,8 +1,8 @@
 import { Button, Card } from "react-bootstrap"
 import "../App.css";
-import Rating from "./Rating";
-import { useShoppingCart } from "./context/ShoppingCartContext"
-import { formatCurrency } from "./Utilities/formatCurrency"
+import Rating from "./components/Rating";
+import { useShoppingCart } from "./components/context/ShoppingCartContext"
+import { formatCurrency } from "./components/Utilities/formatCurrency"
 
 
 export function StoreItem({ id, name, price, imgUrl, ratings }) {
