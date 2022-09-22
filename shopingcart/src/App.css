@@ -230,7 +230,7 @@ Showcase
     border: 0;
     border-radius: 2px;
     font-weight: 500;
-    background-color: #f96816;
+    background: #f96816;
     color: #fff;
     text-decoration: none;
     cursor: pointer;
@@ -238,7 +238,7 @@ Showcase
     transition: all 0.5s;
 }
 .primary-btn:hover{
-    background-color: #ff7b39;
+    background: #ff7b39;
 }
 
 .secondary-btn{
@@ -277,7 +277,7 @@ Showcase
 #home{
     display: flex;
     flex-direction: column;
- background-color: rgba(0, 0, 0, 0.5);
+ background: rgba(0, 0, 0, 0.5);
     height: 840px;
     justify-content: center;
     align-items: center;
@@ -330,7 +330,7 @@ background-size: cover;
 }
 /*  */
 .heading h3 {
-    background-color:blue;
+    background:blue;
     font-family: century;
     font-style: italic;
     font-size: 1rem; 
@@ -377,18 +377,18 @@ background-size: cover;
 
 .filters{
 text-align: center;
-  background-color: lightgrey;
+  background: lightgrey;
   width: 100%;
   padding: 5px; 
   padding-bottom: 20px;
 }
 
 .store{
-    background-color: lightgrey;
+    background: lightgrey;
 }
 
 .browser{
-    background-color: lightgrey;
+    background: lightgrey;
 }
 
 
@@ -504,7 +504,7 @@ text-align: center;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    background-color: gray;
+    background: gray;
     color: white;
     padding: 20px;
 }
@@ -551,5 +551,5 @@ a {
   
   Badge {
     color: inherit !important;
-    background-color: inherit !important;
+    background: inherit !important;
   }

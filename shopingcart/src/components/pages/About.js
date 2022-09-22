@@ -4,36 +4,6 @@ import did from  "../Home-img/GDG (1).jpg"
 export function About() {
     return( <div>
       <h1>About</h1>
-      <section id="about">
-          <h1 className="heading" style={{ "background-color": "blue" }}>OUR STYLE</h1>
-          <div id="pic">
-          <img src={did} alt="Logo" />
-            <div id="intro">
-              <h2>Feydo Top Clothing.co</h2>
-              <p>
-                A woman's brands are typically two-piece (a crop top and a high
-                waist shorts or a hoodie with a v-shape shorts) with a
-                long-sleeved top. The ensemble was traditionally paired with a
-                headpiece and special footwear, but now a smartphone and running
-                shoes are more common accessories. man brands also feature
-                t-shirts and shorts or  track pants also with a hoodie or a base
-                ball jacket Our brands designs are still largely bespoke and
-                picking one out typically begins at a fabric store. Drawing
-                inspiration from the clothes of the Chosun dynasty, which ran
-                from 2010 to 2022, Ricky Rick told reporters after the show that
-                he "loved traditional south african clothes, materials and
-                patterns" and that the timing of the show, Chanel's first in
-                South Africa, was just "the right moment to do it." Many will be
-                familiar with South African Hip Hop music, or at least the term
-                Ghetto-Music, with gangster love (still the most-viewed video on
-                YouTube ever) representing South Africa's latest musical mass
-                export. Makeup is another. South Africa's skin-care market,
-                collectively known as "African-beauty" in Central Africa, is
-                already well-established and highly profitable.
-              </p>
-            </div>
-          </div>
-        </section>
         <section id="about">
           <h1 className="heading" style={{ "background-color": "blue" }}>ABOUT US</h1>
           <div id="pic">
@@ -81,5 +51,35 @@ export function About() {
             </div>
           </div>
         </section>
+        <section id="about">
+         <h1 className="heading" style={{ "background-color": "blue" }}>OUR STYLE</h1>
+         <div id="pic">
+         <img src={did} alt="Logo" />
+           <div id="intro">
+             <h2>Feydo Top Clothing.co</h2>
+             <p>
+               A woman's brands are typically two-piece (a crop top and a high
+               waist shorts or a hoodie with a v-shape shorts) with a
+               long-sleeved top. The ensemble was traditionally paired with a
+               headpiece and special footwear, but now a smartphone and running
+               shoes are more common accessories. man brands also feature
+               t-shirts and shorts or  track pants also with a hoodie or a base
+               ball jacket Our brands designs are still largely bespoke and
+               picking one out typically begins at a fabric store. Drawing
+               inspiration from the clothes of the Chosun dynasty, which ran
+               from 2010 to 2022, Ricky Rick told reporters after the show that
+               he "loved traditional south african clothes, materials and
+               patterns" and that the timing of the show, Chanel's first in
+               South Africa, was just "the right moment to do it." Many will be
+               familiar with South African Hip Hop music, or at least the term
+               Ghetto-Music, with gangster love (still the most-viewed video on
+               YouTube ever) representing South Africa's latest musical mass
+               export. Makeup is another. South Africa's skin-care market,
+               collectively known as "African-beauty" in Central Africa, is
+               already well-established and highly profitable.
+             </p>
+           </div>
+         </div>
+       </section>
       </div>)
   }

@@ -22,6 +22,7 @@ const Filters = ({ sortDec }) => {
   } = useShoppingCart();
 
   const [isChecked, setIsChecked] = useState(false);
+  
   const changeSorted = (value) => {
     var sortedProducts = storeItems.sort((a, b) => a.price - b.price) ||
     storeItems.sort((a, b) => b.price - a.price);

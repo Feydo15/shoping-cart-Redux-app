@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { StoreItem } from "../StoreItem";
 import storeItems from "../data/items.json";
@@ -8,7 +8,6 @@ import { useShoppingCart } from "../context/ShoppingCartContext";
 import Filters from "../Filters";
 
 export function Home() {
-  // const [products, setProducts] = useState([]);
   const {
     ascending,
     descending,
@@ -19,13 +18,6 @@ export function Home() {
     clear,
   } = useShoppingCart();
 
-  // useEffect(() => {
-    // setProducts(storeItems);
-  // });
-
-  // useEffect(() => {
-    // transformProducts();
-  // });
 
   const transformProducts = () => {
     let sortedProducts = storeItems;
@@ -41,6 +33,8 @@ export function Home() {
      if(descending){
       sortedProducts = storeItems.sort((a, b) => b.price - a.price);
      }
+
+     
 
     if (!byStock) {
       sortedProducts = sortedProducts.filter((product) => product.inStock);
@@ -112,7 +106,7 @@ export function Home() {
               ))}
           </Row>
         </section>
-        <section className="browser">
+        <section className="browser" id="browser">
           <h1 className="heading" style={{ "backgroundColor": "blue" }}>
             Browser
           </h1>

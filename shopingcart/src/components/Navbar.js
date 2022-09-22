@@ -1,16 +1,24 @@
 import { Button, Container, Nav, Navbar as NavbarBs 
-, FormControl} from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+, FormControl, Image} from "react-bootstrap";
+import { NavLink} from "react-router-dom";
+import logo from "./Home-img/ftcy.jpg";
 import { useShoppingCart } from "./context/ShoppingCartContext";
 
 export function Navbar() {
-  const { openCart, cartQuantity } = useShoppingCart();
+  const { openCart, setSearchQuery, cartQuantity } = useShoppingCart();
+
   return (
     <NavbarBs sticky="top" className="bg-white shadow-sm mb-3">
       <Container>
         <Nav className="me-auto">
+        <Nav.Link to="/#" as={NavLink}>
+        <Image 
+     src={logo}
+     style={{ width: "125px", height: "35px", objectFit: "cover" }}
+   />
+        </Nav.Link>
           <Nav.Link to="/" as={NavLink}>
-            Home
+            F T C.co
           </Nav.Link>
           <Nav.Link to="/Login" as={NavLink}>
             Login
@@ -27,6 +35,9 @@ export function Navbar() {
           style={{ width: 500 }}
           placeholder="Search a product"
           className="m-auto"
+          onChange={(e) => {
+            setSearchQuery(e.target.value);
+          }}
         />
       
         {cartQuantity > 0 && (

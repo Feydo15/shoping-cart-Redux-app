@@ -1,16 +1,22 @@
-import { Offcanvas, Stack } from "react-bootstrap"
+import { Offcanvas, Stack, Image } from "react-bootstrap"
 import { useShoppingCart } from "./context/ShoppingCartContext"
 import { formatCurrency } from "./Utilities/formatCurrency"
 import { CartItem } from "./CartItems"
+import logo from "./Home-img/ftcy.jpg";
 import storeItems from "./data/items.json"
+
 
 
 export function ShoppingCart({ isOpen }) {
   const { closeCart, cartItems } = useShoppingCart()
   return (
-    <Offcanvas show={isOpen} onHide={closeCart} placement="end">
+    <Offcanvas show={isOpen} onHide={closeCart} placement="end" style={{ width: "40%", height: "100%"}}>
       <Offcanvas.Header closeButton>
-        <Offcanvas.Title>Cart</Offcanvas.Title>
+        <Offcanvas.Title > <Image 
+     src={logo}
+     style={{ width: "135px", height: "40px", objectFit: "cover"}}
+   />F T C.co  <br/><br/>Cart 
+        </Offcanvas.Title>
       </Offcanvas.Header>
       <Offcanvas.Body>
         <Stack gap={3}>
