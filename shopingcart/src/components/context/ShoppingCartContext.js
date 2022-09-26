@@ -71,11 +71,17 @@ export function ShoppingCartProvider({ children }) {
     })
   }
  
+  function checkOut () {
+    alert("thanks for shopping with us please come again")
+    setCartItems([])
+    setIsOpen(false)
+  }
   
 
   return (
     <ShoppingCartContext.Provider
       value={{
+        checkOut,
         getItemQuantity,
         increaseCartQuantity,
         decreaseCartQuantity,

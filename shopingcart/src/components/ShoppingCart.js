@@ -1,4 +1,4 @@
-import { Offcanvas, Stack, Image } from "react-bootstrap"
+import { Offcanvas, Stack, Image, Button } from "react-bootstrap"
 import { useShoppingCart } from "./context/ShoppingCartContext"
 import { formatCurrency } from "./Utilities/formatCurrency"
 import { CartItem } from "./CartItems"
@@ -8,7 +8,7 @@ import storeItems from "./data/items.json"
 
 
 export function ShoppingCart({ isOpen }) {
-  const { closeCart, cartItems } = useShoppingCart()
+  const { closeCart, cartItems, checkOut } = useShoppingCart()
   return (
     <Offcanvas show={isOpen} onHide={closeCart} placement="end" style={{ width: "40%", height: "100%"}}>
       <Offcanvas.Header closeButton>
@@ -33,6 +33,7 @@ export function ShoppingCart({ isOpen }) {
             )}
           </div>
         </Stack>
+        <Button  className="w-100" onClick={() => checkOut()}>Check Out</Button>
       </Offcanvas.Body>
     </Offcanvas>
   )
