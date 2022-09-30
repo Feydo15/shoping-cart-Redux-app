@@ -2,10 +2,11 @@ import { Button, Container, Nav, Navbar as NavbarBs
 , FormControl, Image} from "react-bootstrap";
 import { NavLink} from "react-router-dom";
 import logo from "./Home-img/ftcy.jpg";
-import { useShoppingCart } from "./context/ShoppingCartContext";
+// import { useShoppingCart } from "./context/ShoppingCartContext";
+import { useAppContext } from "./context/AppContext"
 
 export function Navbar() {
-  const { openCart, setSearchQuery, cartQuantity } = useShoppingCart();
+  const { openCart, setSearchQuery, cartQuantity } = useAppContext();
 
   return (
     <NavbarBs sticky="top" className="bg-white shadow-sm mb-3">

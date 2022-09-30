@@ -1,5 +1,6 @@
 import { Offcanvas, Stack, Image, Button } from "react-bootstrap"
-import { useShoppingCart } from "./context/ShoppingCartContext"
+// import { useShoppingCart } from "./context/ShoppingCartContext"
+import { useAppContext } from "./context/AppContext"
 import { formatCurrency } from "./Utilities/formatCurrency"
 import { CartItem } from "./CartItems"
 import logo from "./Home-img/ftcy.jpg";
@@ -8,7 +9,7 @@ import storeItems from "./data/items.json"
 
 
 export function ShoppingCart({ isOpen }) {
-  const { closeCart, cartItems, checkOut } = useShoppingCart()
+  const { closeCart, cartItems, checkOut } = useAppContext()
   return (
     <Offcanvas show={isOpen} onHide={closeCart} placement="end" style={{ width: "40%", height: "100%"}}>
       <Offcanvas.Header closeButton>

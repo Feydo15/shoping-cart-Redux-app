@@ -1,7 +1,8 @@
 import { Button, Card } from "react-bootstrap"
 import "../App.css";
 import Rating from "./Rating";
-import { useShoppingCart } from "./context/ShoppingCartContext"
+// import { useShoppingCart } from "./context/ShoppingCartContext"
+import { useAppContext } from "./context/AppContext"
 import { formatCurrency } from "./Utilities/formatCurrency"
 
 
@@ -11,7 +12,7 @@ export function StoreItem({ id, name, price, imgUrl, ratings }) {
     increaseCartQuantity,
     decreaseCartQuantity,
     removeFromCart,
-  } = useShoppingCart()
+  } = useAppContext()
   const quantity = getItemQuantity(id)
 
   return (

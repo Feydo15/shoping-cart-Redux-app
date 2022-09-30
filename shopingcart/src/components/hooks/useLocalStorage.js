@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react"
+import {  useState } from "react"
+import { useAppContext } from "../context/AppContext"
 
 // export function useLocalStorage(key, initialValue) {
   // const [value, setValue] = useState(() => {
@@ -17,18 +18,22 @@ import { useEffect, useState } from "react"
 
 // Hook
 export function useLocalStorage(key, initialValue) {
+  const {
+    activeUser,
+  } = useAppContext()
   const [storedValue, setStoredValue] = useState(() => {
     if (typeof window === "undefined") {
       return initialValue;
     }
-    try {
+    else if (activeUser === true){
       const item = window.localStorage.getItem(key);
       return item ? JSON.parse(item) : initialValue;
-    } catch (error) {
-      console.log(error);
+    } else {
       return initialValue;
     }
   });
+
+
   const setValue = (value) => {
     try {
       const valueToStore =

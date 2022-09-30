@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext, useState } from "react"
+import { createContext, useContext, useState } from "react"
 import { ShoppingCart } from "../ShoppingCart"
 // import storeItems from "../data/items.json"
 import { useLocalStorage } from "../hooks/useLocalStorage"
@@ -12,14 +12,11 @@ export function useShoppingCart() {
 export function ShoppingCartProvider({ children }) {
   const [isOpen, setIsOpen] = useState(false)
   const [clear, setClear] = useState(false)
-  const [ascending, setAscending] = useState(false)
-  const [descending, setDescending] = useState(false)
   const [byStock, setByStock] = useState(false)
   const [searchQuery, setSearchQuery] = useState(false)
   const [byFastDelivery, setByFastDelivery] = useState(false)
   const [byRatings, setByRatings] = useState(false)
-
-  
+  const [gender,setGender]=useState()
   const [cartItems, setCartItems] = useLocalStorage(
     "shopping-cart",
     []
@@ -70,17 +67,24 @@ export function ShoppingCartProvider({ children }) {
       return currItems.filter(item => item.id !== id)
     })
   }
- 
+
+
+
   function checkOut () {
     alert("thanks for shopping with us please come again")
     setCartItems([])
     setIsOpen(false)
+  }
+
+  const handleGender=(e)=>{
+    setGender(e.target.value)
   }
   
 
   return (
     <ShoppingCartContext.Provider
       value={{
+        handleGender,
         checkOut,
         getItemQuantity,
         increaseCartQuantity,
@@ -90,8 +94,7 @@ export function ShoppingCartProvider({ children }) {
         closeCart,
         cartItems,
         cartQuantity,
-        descending, setDescending,
-        ascending, setAscending,
+        gender, setGender,
         byStock, setByStock,
         searchQuery, setSearchQuery,
         byFastDelivery, setByFastDelivery,

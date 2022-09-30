@@ -1,17 +1,13 @@
-import React, { useState } from "react";
-// import storeItems from "./data/items.json"
+import React from "react";
 import { Button, Form, FormControl } from "react-bootstrap";
 import { useShoppingCart } from "./context/ShoppingCartContext";
-import storeItems from "./data/items.json";
-
 import Rating from "./Rating";
 
-const Filters = ({ sortDec }) => {
+const Filters = () => {
   const {
-    sorted,
     byStock,
-    setAscending,
-    setDescending,
+    gender,
+    handleGender,
     setByStock,
     byFastDelivery,
     setByFastDelivery,
@@ -21,16 +17,6 @@ const Filters = ({ sortDec }) => {
     setClear,
   } = useShoppingCart();
 
-  const [isChecked, setIsChecked] = useState(false);
-  
-  const changeSorted = (value) => {
-    var sortedProducts = storeItems.sort((a, b) => a.price - b.price) ||
-    storeItems.sort((a, b) => b.price - a.price);
-    sortDec(sortedProducts);
-
-    console.log(value);
-    setIsChecked(!isChecked);
-  };
   return (
     <div className="filters">
       <h1 className="title">Filter Products</h1>
@@ -47,27 +33,31 @@ const Filters = ({ sortDec }) => {
       <span>
         <Form.Check
           inline
-          label="Ascending"
+          label="Men"
           name="group1"
           type="radio"
+          value="men"
           id={`inline-1`}
           onChange={() => {
-          setAscending(true);
+            handleGender()
           }}
-          checked={isChecked}
+      checked={gender === "men" ? true : false}
+        
         />
       </span>
       <span>
         <Form.Check
           inline
-          label="Descending"
+          label="Women"
           name="group1"
           type="radio"
+          value="women"
           id={`inline-2`}
           onChange={() => {
-            setDescending(true);
+            handleGender()
             }}
-          checked={isChecked ? true : false}
+     checked={gender === "women" ? true : false}
+          
         />
       </span>
       <span>

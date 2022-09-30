@@ -1,4 +1,4 @@
-// import React, { useEffect, useState } from "react";
+import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { StoreItem } from "../StoreItem";
 import storeItems from "../data/items.json";
@@ -9,8 +9,7 @@ import Filters from "../Filters";
 
 export function Home() {
   const {
-    ascending,
-    descending,
+    gender,
     byStock,
     byFastDelivery,
     byRatings,
@@ -21,21 +20,12 @@ export function Home() {
 
   const transformProducts = () => {
     let sortedProducts = storeItems;
-    // if (sort) {
-      // sortedProducts = sortedProducts.sort((a, b) =>
-        // sort === "lowToHigh" ? a.price - b.price : b.price - a.price
-      // );
-    // }
 
-     if(ascending){
-      sortedProducts = storeItems.sort((a, b) => a.price - b.price);
-     }
-     if(descending){
-      sortedProducts = storeItems.sort((a, b) => b.price - a.price);
-     }
-
-     
-
+     if (gender) {
+      sortedProducts = sortedProducts.filter((product) =>
+      gender === "men" ? product.value : null
+      );
+    } 
     if (!byStock) {
       sortedProducts = sortedProducts.filter((product) => product.inStock);
     }
@@ -54,12 +44,8 @@ export function Home() {
     }
 
     if (clear) {
-      return {
-        byStock: false,
-        byFastDelivery: false,
-        byRatings: 0,
-        searchQuery: "",
-      };
+      return 
+      
     }
     // setProducts(sortedProducts);
     return sortedProducts;

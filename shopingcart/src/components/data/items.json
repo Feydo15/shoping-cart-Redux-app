@@ -8,7 +8,8 @@
       "inStock": true,
       "fastDelivery": true,
       "ratings": "5",
-      "newProduct": false
+      "newProduct": false,
+      "gender" : "men"
     },
     {
       "id": 2,
@@ -18,7 +19,8 @@
       "inStock": true,
       "fastDelivery": false,
       "ratings": "0",
-      "newProduct": true
+      "newProduct": true,
+      "gender" : "women"
     },
     {
       "id": 3,
@@ -28,7 +30,8 @@
       "inStock": true,
       "fastDelivery": true,
       "ratings": "5",
-      "newProduct": false
+      "newProduct": false,
+      "gender" : "men"
     },
     {
       "id": 4,
@@ -38,7 +41,8 @@
       "inStock": true,
       "fastDelivery": true,
       "ratings": "2",
-      "newProduct": true
+      "newProduct": true,
+      "gender" : "women"
     },
     {
       "id": 5,
@@ -48,7 +52,8 @@
       "inStock": true,
       "fastDelivery": false,
       "ratings": "5",
-      "newProduct": true
+      "newProduct": true,
+      "gender" : "men"
     },
     {
       "id": 6,
@@ -58,7 +63,8 @@
       "inStock": false,
       "fastDelivery": true,
       "ratings": "5",
-      "newProduct": false
+      "newProduct": false,
+      "gender" : "women"
     },
     {
       "id": 7,
@@ -68,7 +74,8 @@
       "inStock": true,
       "fastDelivery": true,
       "ratings": "1",
-      "newProduct": false
+      "newProduct": false,
+      "gender" : "women"
     }
   ]
   
