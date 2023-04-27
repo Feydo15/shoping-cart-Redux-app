@@ -2,7 +2,7 @@ import { createContext, useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ShoppingCart } from "../ShoppingCart";
 // import { useLocalStorage } from "../hooks/useLocalStorage"
-import { v4 as uuidv4 } from "uuid";
+// import { v4 as uuidv4 } from "uuid";
 
 const AppContext = createContext({});
 
@@ -31,17 +31,18 @@ export function AppContextProvider({ children }) {
   const [gender, setGender] = useState();
 
   const [users, setUsers] = useState(getData());
+  const [userId, setUserId]= useState(null);
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("null");
-  const [activeUser, setActiveUser] = useState("false");
+  const [confirmPassword, setConfirmPassword] = useState(null);
+  const [userActive, setUserActive] = useState(false);
   const [cartItems, setCartItems] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     let user = {
-      id: uuidv4(),
+      userId: userId,
       userName: userName,
       email: email,
       password: password,
@@ -55,21 +56,24 @@ export function AppContextProvider({ children }) {
       alert("password don't match");
     } else {
       setUsers([...users, user]);
-      setActiveUser(true);
-      navigate("/store ");
+      setUserActive(true);
+      navigate("/Store");
     }
     console.log("details", users);
   };
 
   const handleSubmitSuccess = (e) => {
     e.preventDefault();
-    // let item1 ={
-    // email: email,
-    // password: password,
-    // };
-    if (users.find((users) => users.email === email)) {
-      setActiveUser(true);
+    var storeValues = JSON.parse(localStorage.getItem("users"));
+    var foundUser = storeValues.find(
+      (user) => user.email === email && user.password === password
+    );
+    console.log("users", foundUser);
+    setCartItems(foundUser.cartItems ? foundUser.cartItems : []);
+    if (foundUser) {
+      setUserActive(true);
       navigate("/Store");
+      fillCart();
     } else {
       alert("Account Doesn't exists");
     }
@@ -88,7 +92,7 @@ export function AppContextProvider({ children }) {
     let index = users.findIndex((users) => users.email === email);
     console.log(index, users[index]);
     let user = users[index];
-    if (activeUser === false) {
+    if (userActive === false) {
       user.cartItems = items;
     } else {
       user.cartItems = [...items];
@@ -97,32 +101,52 @@ export function AppContextProvider({ children }) {
     localStorage.setItem("users", JSON.stringify(users));
   };
 
+  const fillCart = (items) => {
+    let index = users.findIndex((users) => users.email === email);
+    console.log(index, users[index]);
+    let user = users[index];
+    user.cartItems = items;
+    const fill = items.find((element) => element);
+    if (items) {
+      setCartItems({
+        ...items,
+        cartItems: fill.cartItems,
+      });
+    }
+  };
+
   function increaseCartQuantity(id) {
-    setCartItems((currItems) => {
-      let current = cartItems;
-      if (currItems.find((item) => item.id === id) == null) {
-        current = [...currItems, { id, quantity: 1 }];
-      } else {
-        current = currItems.map((item) => {
-          if (item.id === id) {
-            return { ...item, quantity: item.quantity + 1 };
-          } else {
-            return item;
-          }
-        });
-      }
-      addCartItem(current);
-      console.log({ current });
-      return current;
-    });
+    if (!userActive) {
+      console.log("User", userActive);
+      alert("'Please Login or Sign-up to Shop with us.!!'");
+      navigate("/Login");
+    } else {
+      setCartItems((currItems) => {
+        let current = cartItems;
+        if (currItems.find((item) => item.id === id) == null) {
+          current = [...currItems, { id, quantity: 1 }];
+        } else {
+          current = currItems.map((item) => {
+            if (item.id === id) {
+              return { ...item, quantity: item.quantity + 1 };
+            } else {
+              return item;
+            }
+          });
+        }
+        addCartItem(current);
+        console.log({ current });
+        return current;
+      });
+    }
   }
   function decreaseCartQuantity(id) {
     setCartItems((currItems) => {
       let current = cartItems;
       if (currItems.find((item) => item.id === id)?.quantity === 1) {
-        current =  currItems.filter((item) => item.id !== id);
+        current = currItems.filter((item) => item.id !== id);
       } else {
-        current =  currItems.map((item) => {
+        current = currItems.map((item) => {
           if (item.id === id) {
             return { ...item, quantity: item.quantity - 1 };
           } else {
@@ -130,6 +154,8 @@ export function AppContextProvider({ children }) {
           }
         });
       }
+      addCartItem(current);
+      console.log({ current });
       return current;
     });
   }
@@ -152,14 +178,14 @@ export function AppContextProvider({ children }) {
     localStorage.setItem("users", JSON.stringify(users));
   }, [users]);
 
-  console.log(cartItems);
+  console.log("userCart",cartItems);
   return (
     <div>
       <AppContext.Provider
         value={{
-          activeUser,
-          setActiveUser,
           users,
+          userId,
+          setUserId,
           setUsers,
           userName,
           setUserName,
@@ -172,7 +198,6 @@ export function AppContextProvider({ children }) {
           handleSubmit,
           handleSubmitSuccess,
           navigate,
-
           handleGender,
           checkOut,
           getItemQuantity,

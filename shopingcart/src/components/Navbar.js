@@ -25,7 +25,7 @@ export function Navbar() {
             Login
           </Nav.Link>
           <Nav.Link to="/Register" as={NavLink}>
-          Sign-in
+          Sign-up
           </Nav.Link>
           <Nav.Link to="/about" as={NavLink}>
             About

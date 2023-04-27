@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Form, FormControl } from "react-bootstrap";
+import { Button, Form, FormControl, Dropdown } from "react-bootstrap";
 import { useShoppingCart } from "./context/ShoppingCartContext";
 import Rating from "./Rating";
 
@@ -31,34 +31,20 @@ const Filters = () => {
         />
       </span>
       <span>
-        <Form.Check
-          inline
-          label="Men"
-          name="group1"
-          type="radio"
-          value="men"
-          id={`inline-1`}
-          onChange={() => {
-            handleGender()
-          }}
-      checked={gender === "men" ? true : false}
-        
-        />
-      </span>
-      <span>
-        <Form.Check
-          inline
-          label="Women"
-          name="group1"
-          type="radio"
-          value="women"
-          id={`inline-2`}
-          onChange={() => {
-            handleGender()
-            }}
-     checked={gender === "women" ? true : false}
-          
-        />
+      <Dropdown>
+      <Dropdown.Toggle size="sm" id="dropdown-basic">
+        CATEGORIES
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu>
+        <Dropdown.Item href="#/action-1">Men</Dropdown.Item>
+        <Dropdown.Item href="#/action-2">Women</Dropdown.Item>
+        <Dropdown.Item href="#/action-3">Boys</Dropdown.Item>
+        <Dropdown.Item href="#/action-4">Girls</Dropdown.Item>
+        <Dropdown.Item href="#/action-5">Kids</Dropdown.Item>
+        <Dropdown.Item href="#/action-6">Baby and beauty</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
       </span>
       <span>
         <Form.Check
@@ -76,7 +62,7 @@ const Filters = () => {
       <span>
         <Form.Check
           inline
-          label="Fast Delivery Only"
+          label="Fast Delivery Only" 
           name="group1"
           type="Checkbox"
           id={`inline-4`}

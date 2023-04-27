@@ -77,7 +77,7 @@ export function ShoppingCartProvider({ children }) {
   }
 
   const handleGender=(e)=>{
-    setGender(e.target.value)
+    setGender([e.target.name], e.target.value )
   }
   
 
@@ -104,5 +104,5 @@ export function ShoppingCartProvider({ children }) {
       
     >
       {children}
-      <ShoppingCart isOpen={isOpen} />
+      <ShoppingCart isOpen={isOpen}/>
     </ShoppingCartContext.Provider>)}

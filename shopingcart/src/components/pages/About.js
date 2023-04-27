@@ -13,7 +13,7 @@ export function About() {
               <p>
                 "F T C.co" (Feydo Top Clothing.co) is a South African
                 collective online apparel store that provide its valued
-                customers with a variety of locally manufactured brands that was
+                customers with a variety of locally manufactured brands that are
                 tailored with a 100% fabric from china and several neighbouring
                 countries along the southern part of Africa. F T C.co has been
                 consistent on bringing a wide variety of brands that are inspired

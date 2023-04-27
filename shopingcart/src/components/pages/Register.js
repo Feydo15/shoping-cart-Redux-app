@@ -10,6 +10,7 @@ export const Register = () =>{
     setPassword,
     setConfirmPassword,
     handleSubmit,
+    setUserId
   } = useAppContext()
 
     return(
@@ -18,6 +19,7 @@ export const Register = () =>{
              <div id="left">
               <div id = "register">
               <h1>F T C.co</h1>
+              <h2>Sign-up</h2>
            <form className='form-group' onSubmit={handleSubmit}>
               <div>
                 <label>Username</label>
@@ -28,6 +30,18 @@ export const Register = () =>{
                   onChange={(e) => setUserName(e.target.value)}
                   name="username"
                   placeholder="Username"
+                  required
+                />
+              </div>
+              <div>
+                <label>ID_NO</label>
+                <input
+                  type="text"
+                  className="text-input"
+                  id="userId"
+                  onChange={(e) => setUserId(e.target.value)}
+                  name="userId"
+                  placeholder="ID_NO"
                   required
                 />
               </div>
@@ -92,11 +106,11 @@ export const Register = () =>{
           <div id="showcase">
             <div id="showcase-content">
               <h1 className="showcase-text">
-                Is not just a <strong>Force</strong>
+              Giving You The Best In <strong>Every Brand.!!</strong>
               </h1>
-              <a href="#" className="secondary-btn">
+              <Link href="#" className="secondary-btn">
                 Start a FREE 7-day trial
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,36 +1,33 @@
 .App {
   text-align: center;
+  width: 100%;
 }
-/*  */
 .span{
   position: relative;
   display: block; 
 }
-/*  */
-/*  */
+
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-/* *{ */
-   /* box-sizing: border-box;  */
-/* } */
-/*  */
+
 body{
+
     font-family:'Roboto', sans-serif; 
     font-weight: 300;
+    text-align: center;
+    width: 100%;
     background: lightgrey;
-    ;
-    /* color:#fff; */
-    /* overflow: hidden; */
-    
 }
 h1,h2,h3,h4,h5,h6{
     font-weight: 300;
 }
-/*  */
+
 #wrapper{
+    max-width: 100%;
     display:flex;
     flex-direction: row;   
 }
-/*  */
+
 #left{
     display: flex;
     flex-direction: column;
@@ -44,8 +41,6 @@ h1,h2,h3,h4,h5,h6{
 #right{
     flex: 1;
 }
-/*  */
-/*  */
 sign-in 
 
 #signin {
@@ -53,12 +48,12 @@ sign-in
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 80%;
+    width: 100%;
     padding-bottom: 1rem;
 }
 
 #signin form {
-    width: 80%;
+    width: 100%;
     padding-bottom: 3rem;
 }
 #signin label {
@@ -77,17 +72,15 @@ sign-in
     padding: 0.5rem 1rem;
     line-height: 1.3rem;
 }
-/* button */
-/*  */
+
 #signin .primary-btn{
     width: 100%;
 }
-/*  */
+
 #signin .secondary-btn,.or,.links {
 width:60%;
 }
-/*  */
-#signin .links a {
+#signin .links  {
     text-decoration: none;
     display: block;
     color: #fff;
@@ -96,39 +89,42 @@ width:60%;
     text-align: center;
     font-size:0.9rem;
 }
-/*  */
+
 #signin .or {
     display: flex;
     flex-direction: row;
     margin-bottom:  1.2rem;
     align-items: center;
 }
-/*  */
+
 #signin .or .bar {
 flex: auto;
 border: none;
 height: 1px;
 background: #aaa;
 }
-/*  */
+
 #signin .or span{
     color: #fff;
     padding:0 0.8rem;
 }
-/*  */
-/* register */
+
+
+
 #register form {
-    width: 80%;
+    width: 100%;
     padding-bottom: 1rem;
 }
-/*  */
-/*  */
+
+
 #register label {
     font-size: 0.9rem;
     line-height: 2rem;
     font-weight: 500;
 }
-/*  */
+.main button {
+    background: lightblue;
+}
 #register .text-input {
     margin-bottom: 2px;
     width: 100%;
@@ -140,17 +136,17 @@ background: #aaa;
     line-height: 1.3rem;
 }
 /* button */
-/*  */
+
 .primary-btn{
     width: 100%;
 }
-/*  */
+
 .secondary-btn,.or,.links {
 width:100%;
 padding-bottom: 1rem;
 }
 
-.links a {
+.links Link {
     text-decoration: none;
     display: block;
     color: #fff;
@@ -165,34 +161,38 @@ padding-bottom: 1rem;
     margin-bottom:  1.2rem;
     align-items: center;
 }
-/*  */
+
 .or .bar {
 flex: auto;
 border: none;
 height: 1px;
 background: #aaa;
 }
-/*  */
+
 .or span{
     color: #fff;
     padding:0 0.8rem;
 }
-Showcase
+
+
 
 #showcase{
     display: flex;
    justify-content:center;
    align-items: center;
    text-align: center;
-   background: url("./components/img/high.jpg") no-repeat center center / cover;
+   background: url("./components/img/bg-s.jpg") no-repeat center center / cover;
    height: 100vh; 
 }
 #showcase .showcase-text {
   font-size: 3rem;
   width: 100%;
-  color: #fff;
+  color: blue;
   margin-bottom: 1.5rem;
 
+}
+#showcase .secondary-btn{
+    color: white !important;
 }
 
 /* Footer */
@@ -277,15 +277,16 @@ Showcase
 #home{
     display: flex;
     flex-direction: column;
- background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5);
     height: 840px;
+    width: 100%;
     justify-content: center;
     align-items: center;
     color:yellow;
-    background-image: url("/public/Home-img/1644216671869.jpg");
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
+    background-image: url("/public/Home-img/kbll.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #home::before{
